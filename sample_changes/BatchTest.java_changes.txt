@@ -1,0 +1,34 @@
+change: Update: /**
+ * Create JUnitTests from a list of files.
+ *
+ * @author <a href="mailto:jeff.martin@synamic.co.uk">Jeff Martin</a>
+ * @author <a href="mailto:stefan.bodewig@epost.de">Stefan Bodewig</a>
+ * @author <a href="mailto:sbailliez@imediation.com">Stephane Bailliez</a>
+ *
+ * @see JUnitTest
+ */
+changed entity: JAVADOC: /**
+ * Create JUnitTests from a list of files.
+ *
+ * @author <a href="mailto:jeff.martin@synamic.co.uk">Jeff Martin</a>
+ * @author <a href="mailto:stefan.bodewig@epost.de">Stefan Bodewig</a>
+ * @author <a href="mailto:sbailliez@imediation.com">Stephane Bailliez</a>
+ *
+ * @see JUnitTest
+ */
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.BatchTest
+root: org.apache.tools.ant.taskdefs.optional.junit.BatchTest
+change type: DOC_UPDATE
+====================
+change: Insert: test.setFailureProperty(failureProperty);
+changed entity: METHOD_INVOCATION: test.setFailureProperty(failureProperty);
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.BatchTest.createJUnitTest(String)
+root: org.apache.tools.ant.taskdefs.optional.junit.BatchTest.createJUnitTest(String)
+change type: STATEMENT_INSERT
+====================
+change: Insert: test.setErrorProperty(errorProperty);
+changed entity: METHOD_INVOCATION: test.setErrorProperty(errorProperty);
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.BatchTest.createJUnitTest(String)
+root: org.apache.tools.ant.taskdefs.optional.junit.BatchTest.createJUnitTest(String)
+change type: STATEMENT_INSERT
+====================

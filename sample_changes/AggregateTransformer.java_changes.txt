@@ -1,0 +1,462 @@
+change: Update: /**
+ * Transform a JUnit xml report.
+ * The default transformation generates an html report in either framed or non-framed
+ * style. The non-framed style is convenient to have a concise report via mail, the
+ * framed report is much more convenient if you want to browse into different
+ * packages or testcases since it is a Javadoc like report.
+ * In the framed report, there are 3 frames:
+ * <ul>
+ *  <li>packageListFrame - list of all packages.
+ *  <li>classListFrame - summary of all testsuites belonging to a package or tests list.
+ *  <li>classFrame - details of all tests made for a package or for a testsuite.
+ * </ul>
+ * As a default, the transformer will use its default stylesheets, they may not be
+ * be appropriate for users who wants to customize their reports, so you can indicates
+ * your own stylesheets by using <tt>setStyleDir()</tt>.
+ * Stylesheets must be as follows:
+ * <ul>
+ *   <li><b>all-packages.xsl</b> create the package list. It creates
+ *   all-packages.html file in the html folder and it is load in the packageListFrame</li>
+ *   <li><b>all-classes.xsl</b> creates the class list. It creates the all-classes.html
+ * file in the html folder is loaded by the 'classListFrame' frame</li>
+ *   <li><b>overview-packages.xsl</b> allows to get summary on all tests made
+ *   for each packages and each class that not include in a package. The filename
+ *   is overview-packages.html</li>
+ *   <li><b>class-detail.xsl</b> is the style for the detail of the tests made on a class.
+ *   the Html resulting page in write in the directory of the package and the name
+ *   of this page is the name of the class with "-detail" element. For instance,
+ *   the style is applied on the MyClass testsuite, the resulting filename is
+ *   <u>MyClass-detail.html</u>. This file is load in the "classFrame" frame.</li>
+ *   <li><b>package-summary.xsl</b> allows to create a summary on the package.
+ *   The resulting html file is write in the package directory. The name of this
+ *   file is <u>package-summary.html</u> This file is load in the "classFrame" frame.</li>
+ *   <li><b>classes-list.xsl</b> create the list of the class in this package.
+ *   The resulting html file is write in the package directory and it is load in
+ *   the 'classListFrame' frame. The name of the resulting file is <u>class-list.html</u></li>
+ * <li>
+ *
+ * @author <a href="mailto:sbailliez@imediation.com">Stephane Bailliez</a>
+ * @author <a href="mailto:ndelahaye@imediation.com">Nicolas Delahaye</a>
+ */
+changed entity: JAVADOC: /**
+ * Transform a JUnit xml report.
+ * The default transformation generates an html report in either framed or non-framed
+ * style. The non-framed style is convenient to have a concise report via mail, the
+ * framed report is much more convenient if you want to browse into different
+ * packages or testcases since it is a Javadoc like report.
+ * In the framed report, there are 3 frames:
+ * <ul>
+ *  <li>packageListFrame - list of all packages.
+ *  <li>classListFrame - summary of all testsuites belonging to a package or tests list.
+ *  <li>classFrame - details of all tests made for a package or for a testsuite.
+ * </ul>
+ * As a default, the transformer will use its default stylesheets, they may not be
+ * be appropriate for users who wants to customize their reports, so you can indicates
+ * your own stylesheets by using <tt>setStyleDir()</tt>.
+ * Stylesheets must be as follows:
+ * <ul>
+ *   <li><b>all-packages.xsl</b> create the package list. It creates
+ *   all-packages.html file in the html folder and it is load in the packageListFrame</li>
+ *   <li><b>all-classes.xsl</b> creates the class list. It creates the all-classes.html
+ * file in the html folder is loaded by the 'classListFrame' frame</li>
+ *   <li><b>overview-packages.xsl</b> allows to get summary on all tests made
+ *   for each packages and each class that not include in a package. The filename
+ *   is overview-packages.html</li>
+ *   <li><b>class-detail.xsl</b> is the style for the detail of the tests made on a class.
+ *   the Html resulting page in write in the directory of the package and the name
+ *   of this page is the name of the class with "-detail" element. For instance,
+ *   the style is applied on the MyClass testsuite, the resulting filename is
+ *   <u>MyClass-detail.html</u>. This file is load in the "classFrame" frame.</li>
+ *   <li><b>package-summary.xsl</b> allows to create a summary on the package.
+ *   The resulting html file is write in the package directory. The name of this
+ *   file is <u>package-summary.html</u> This file is load in the "classFrame" frame.</li>
+ *   <li><b>classes-list.xsl</b> create the list of the class in this package.
+ *   The resulting html file is write in the package directory and it is load in
+ *   the 'classListFrame' frame. The name of the resulting file is <u>class-list.html</u></li>
+ * <li>
+ *
+ * @author <a href="mailto:sbailliez@imediation.com">Stephane Bailliez</a>
+ * @author <a href="mailto:ndelahaye@imediation.com">Nicolas Delahaye</a>
+ */
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: DOC_UPDATE
+====================
+change: Insert: task.log("extension is not used anymore", Project.MSG_WARN);
+changed entity: METHOD_INVOCATION: task.log("extension is not used anymore", Project.MSG_WARN);
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setExtension(String)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setExtension(String)
+change type: STATEMENT_INSERT
+====================
+change: Delete: this.extension = ext;
+changed entity: ASSIGNMENT: this.extension = ext;
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setExtension(String)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setExtension(String)
+change type: STATEMENT_DELETE
+====================
+change: Insert: DocumentBuilder builder = dbfactory.newDocumentBuilder();
+changed entity: VARIABLE_DECLARATION_STATEMENT: DocumentBuilder builder = dbfactory.newDocumentBuilder();
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setXmlfile(File)
+change type: STATEMENT_INSERT
+====================
+change: Insert: InputStream in = new FileInputStream(xmlfile);
+changed entity: VARIABLE_DECLARATION_STATEMENT: InputStream in = new FileInputStream(xmlfile);
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setXmlfile(File)
+change type: STATEMENT_INSERT
+====================
+change: Insert: 
+changed entity: TRY_STATEMENT: 
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setXmlfile(File)
+change type: STATEMENT_INSERT
+====================
+change: Insert: Document doc = builder.parse(in);
+changed entity: VARIABLE_DECLARATION_STATEMENT: Document doc = builder.parse(in);
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setXmlfile(File)
+change type: STATEMENT_INSERT
+====================
+change: Insert: in.close();
+changed entity: METHOD_INVOCATION: in.close();
+parent: FINALLY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setXmlfile(File)
+change type: STATEMENT_INSERT
+====================
+change: Update: setXmlDocument(readDocument(xmlfile));
+changed entity: METHOD_INVOCATION: setXmlDocument(readDocument(xmlfile));
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setXmlfile(File)
+change type: STATEMENT_UPDATE
+====================
+change: Insert: protected
+changed entity: MODIFIER: protected
+parent: MODIFIERS: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setXmlfile(File)
+change type: INCREASING_ACCESSIBILITY_CHANGE
+====================
+change: Insert: final long t0 = System.currentTimeMillis();
+changed entity: VARIABLE_DECLARATION_STATEMENT: final long t0 = System.currentTimeMillis();
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_INSERT
+====================
+change: Insert: final long dt = (System.currentTimeMillis() - t0);
+changed entity: VARIABLE_DECLARATION_STATEMENT: final long dt = (System.currentTimeMillis() - t0);
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_INSERT
+====================
+change: Insert: task.log((("Transform time: " + dt) + "ms"));
+changed entity: METHOD_INVOCATION: task.log((("Transform time: " + dt) + "ms"));
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_INSERT
+====================
+change: Insert: XalanExecutor executor = XalanExecutor.newInstance(this);
+changed entity: VARIABLE_DECLARATION_STATEMENT: XalanExecutor executor = XalanExecutor.newInstance(this);
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_INSERT
+====================
+change: Insert: executor.execute();
+changed entity: METHOD_INVOCATION: executor.execute();
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_INSERT
+====================
+change: Delete: createSinglePageSummary(root);
+changed entity: METHOD_INVOCATION: createSinglePageSummary(root);
+parent: THEN_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: createFrameStructure();
+changed entity: METHOD_INVOCATION: createFrameStructure();
+parent: ELSE_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: createCascadingStyleSheet();
+changed entity: METHOD_INVOCATION: createCascadingStyleSheet();
+parent: ELSE_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: createPackageList(root);
+changed entity: METHOD_INVOCATION: createPackageList(root);
+parent: ELSE_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: createClassList(root);
+changed entity: METHOD_INVOCATION: createClassList(root);
+parent: ELSE_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: createPackageOverview(root);
+changed entity: METHOD_INVOCATION: createPackageOverview(root);
+parent: ELSE_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: createAllTestSuiteDetails(root);
+changed entity: METHOD_INVOCATION: createAllTestSuiteDetails(root);
+parent: ELSE_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: createAllPackageDetails(root);
+changed entity: METHOD_INVOCATION: createAllPackageDetails(root);
+parent: ELSE_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: NOFRAMES.equals(format)
+changed entity: ELSE_STATEMENT: NOFRAMES.equals(format)
+parent: IF_STATEMENT: NOFRAMES.equals(format)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: ALTERNATIVE_PART_DELETE
+====================
+change: Delete: NOFRAMES.equals(format)
+changed entity: IF_STATEMENT: NOFRAMES.equals(format)
+parent: BODY: 
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: e.printStackTrace();
+changed entity: METHOD_INVOCATION: e.printStackTrace();
+parent: CATCH_CLAUSE: Exception
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform()
+change type: STATEMENT_DELETE
+====================
+change: Delete: new BuildException((("Invalid format. Must be \'frames\' or \'noframes\' but was: \'" + format) + "\'"));
+changed entity: THROW_STATEMENT: new BuildException((("Invalid format. Must be \'frames\' or \'noframes\' but was: \'" + format) + "\'"));
+parent: THEN_STATEMENT: ((! FRAMES.equals(format)) && (! NOFRAMES.equals(format)))
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+change type: STATEMENT_DELETE
+====================
+change: Delete: ((! FRAMES.equals(format)) && (! NOFRAMES.equals(format)))
+changed entity: IF_STATEMENT: ((! FRAMES.equals(format)) && (! NOFRAMES.equals(format)))
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+change type: STATEMENT_DELETE
+====================
+change: Delete: // create the directories if needed
+changed entity: LINE_COMMENT: // create the directories if needed
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+change type: COMMENT_DELETE
+====================
+change: Delete: new BuildException(("Could not create directory " + toDir));
+changed entity: THROW_STATEMENT: new BuildException(("Could not create directory " + toDir));
+parent: THEN_STATEMENT: (! toDir.mkdirs())
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+change type: STATEMENT_DELETE
+====================
+change: Delete: (! toDir.mkdirs())
+changed entity: IF_STATEMENT: (! toDir.mkdirs())
+parent: THEN_STATEMENT: (! toDir.exists())
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+change type: STATEMENT_DELETE
+====================
+change: Delete: (! toDir.exists())
+changed entity: IF_STATEMENT: (! toDir.exists())
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.checkOptions()
+change type: STATEMENT_DELETE
+====================
+change: Update: format: String
+changed entity: SINGLE_TYPE: format: String
+parent: PARAMETER: format
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setFormat(Format)
+change type: PARAMETER_TYPE_CHANGE
+====================
+change: Update: this.format = format;
+changed entity: ASSIGNMENT: this.format = format;
+parent: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setFormat(String)
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.setFormat(Format)
+change type: STATEMENT_UPDATE
+====================
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getStylesheetSystemId()
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getStylesheetSystemId()
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: ADDITIONAL_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getExtension()
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getExtension()
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createCascadingStyleSheet()
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createCascadingStyleSheet()
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.packageToPath(String)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.packageToPath(String)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.buildDocument(NodeList)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.buildDocument(NodeList)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform(Node,String,String)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.transform(Node,String,String)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getResourceAsStream(String)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getResourceAsStream(String)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createPackageOverview(Node)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createPackageOverview(Node)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createPackageList(Node)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createPackageList(Node)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getPackages(Element)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getPackages(Element)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createAllPackageDetails(Element)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createAllPackageDetails(Element)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.copy(InputStream,OutputStream)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.copy(InputStream,OutputStream)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createAllTestSuiteDetails(Element)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createAllTestSuiteDetails(Element)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createTestSuiteDetails(Element)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createTestSuiteDetails(Element)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getXSLStreamSource(String)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.getXSLStreamSource(String)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createClassList(Node)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createClassList(Node)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createFrameStructure()
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createFrameStructure()
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createSinglePageSummary(Element)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createSinglePageSummary(Element)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createPackageDetails(Node,String)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.createPackageDetails(Node,String)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.readDocument(File)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.readDocument(File)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_FUNCTIONALITY
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.ALLPACKAGES : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.ALLPACKAGES : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.CLASSES_LIST : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.CLASSES_LIST : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.ALLCLASSES : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.ALLCLASSES : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.extension : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.extension : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.OVERVIEW_SUMMARY : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.OVERVIEW_SUMMARY : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.PACKAGE_SUMMARY : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.PACKAGE_SUMMARY : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.CLASS_DETAILS : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.CLASS_DETAILS : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.OVERVIEW_PACKAGES : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.OVERVIEW_PACKAGES : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_OBJECT_STATE
+====================
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.Format
+changed entity: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.Format
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: ADDITIONAL_CLASS
+====================
+change: Delete: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.PackageFilter
+changed entity: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer.PackageFilter
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+root: org.apache.tools.ant.taskdefs.optional.junit.AggregateTransformer
+change type: REMOVED_CLASS
+====================

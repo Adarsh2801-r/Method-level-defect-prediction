@@ -1,0 +1,36 @@
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.setErrorProperty(String)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.setErrorProperty(String)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+root: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+change type: ADDITIONAL_FUNCTIONALITY
+====================
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.getErrorProperty()
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.getErrorProperty()
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+root: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+change type: ADDITIONAL_FUNCTIONALITY
+====================
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.setFailureProperty(String)
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.setFailureProperty(String)
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+root: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+change type: ADDITIONAL_FUNCTIONALITY
+====================
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.getFailureProperty()
+changed entity: METHOD: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.getFailureProperty()
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+root: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+change type: ADDITIONAL_FUNCTIONALITY
+====================
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.errorProperty : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.errorProperty : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+root: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+change type: ADDITIONAL_OBJECT_STATE
+====================
+change: Insert: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.failureProperty : String
+changed entity: FIELD: org.apache.tools.ant.taskdefs.optional.junit.BaseTest.failureProperty : String
+parent: CLASS: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+root: org.apache.tools.ant.taskdefs.optional.junit.BaseTest
+change type: ADDITIONAL_OBJECT_STATE
+====================
