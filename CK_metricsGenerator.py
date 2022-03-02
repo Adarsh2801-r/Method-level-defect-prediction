@@ -111,7 +111,6 @@ class Lexer:
 #######################################
 
 def run(text):
-    print("HELLO")
     lexer = Lexer(text)
     tokens = lexer.make_tokens()
     return tokens
